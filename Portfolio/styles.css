@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+@font-face{font-family : "police1"; src:url("Fonts/LilitaOne-Regular.ttf")}
+
 #banner{
     background-image: url(Images/night_sky_background.jpg);
     width: 100%;
@@ -12,6 +14,8 @@
     flex-flow: column wrap;
 }
 
+
+/*Languages*/
 #languages {display: flex; flex-flow: row nowrap; justify-content: flex-end;}
 
 
@@ -22,11 +26,36 @@
     margin: 5px;
 }
 
-#welcome{display: flex; flex-flow: column wrap; justify-content: space-around; align-content: center; width: 100%;height:500px}
+/*welcome*/
+#welcome{display: flex; flex-flow: column wrap; justify-content:space-around; align-items: center; width: 100%;height:900px}
 
-#welcome p{color:white; font : 25px Arial, sans-serif;}
+#welcome div{display: flex; flex-flow: column wrap; justify-content: center; align-items: center;width: 100%;}
 
-h1{color:white;}
+#welcome div:first-child{height: 50%;}
 
-#welcome img{height:30px; width: 60px;}
+#welcome p{color:white; font : 20px 'police1', sans-serif;}
+
+#bonjour{position: relative;right:4.5%;}
+#welcome p:first-child{font-size: 20px; }
+
+#welcome p:nth-child(2){font-size: 50px; text-transform: uppercase;}
+
+h1{color:white;font: 40px 'police1', sans-serif;}
+
+#welcome p:nth-child(4){font-size: 25px}
+
+#welcome p:nth-child(5){font-size: 30px}
+
+
+#welcome img{height:30px; width: 60px;margin-top:10px;}
+
+/*navigateur*/
+
+nav{overflow: hidden; background-color: red; display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; width: 100%; height: 50px; padding:0 20%; border-bottom: 6px; border-bottom-style: groove;}
+
+nav a{text-decoration: none; color:white; font: 16px 'police1', sans-serif; text-transform: uppercase;}
+
+.sticky{position: fixed;top:0}
+
+
 
