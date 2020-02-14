@@ -1,4 +1,23 @@
 <?php
+try{
+    $bdd= new PDO('mysql:host=localhost;dbname=portfolio;charset=utf8','root','root');
+}
+
+catch (Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
+}
+
+
+#Afficher des noms venant de la BDD
+//$reponse = $bdd->query('SELECT * FROM admin;');
+//
+//while ($donnee = $reponse->fetch()){
+//    echo $donnee['admin_username'];
+//}
+//$reponse->closeCursor() ;
+
+
 include("lang_config.php");
 ?>
 <!DOCTYPE html>
@@ -19,7 +38,6 @@ include("lang_config.php");
                 </div>
                 <div id="welcome">
                     <div>
-                        
                         <p id="bonjour"><?php echo _BONJOUR;?> </p>
                         <p><?php echo _ADAM_DUPUIS ;?></p>
                         <h1><?php echo _DEVELOPPEUR ;?></h1>
@@ -109,7 +127,7 @@ include("lang_config.php");
                     <h4><?php echo _LAISSEZ_MESSAGE ; ?></h4>
 <!--                    formulaire.txt à changer -->
 
-                    <form action="formulaire.txt" method="post" >
+                    <form action="contact.php" method="post" >
                         <input type="text" id="name" placeholder="<?php echo _NOM ; ?>"/>
                         <input type="email" id="email" placeholder="<?php echo _MAIL ; ?>"/>
                         <input type="text" id="organisation" placeholder="<?php echo _ORGANISATION ; ?>"/>

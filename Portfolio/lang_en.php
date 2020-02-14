@@ -17,7 +17,7 @@ define("_ME_CONTACTER", "Contact Me");
 #About
 define("_QUI_SUIS_JE", "Who am I?");
 
-define("_3_MOTS_DEF", "Lorem, Ipsum, Metuebat");
+define("_3_MOTS_DEF", "Lorem, Curious, Ipsum");
 
 define("_DESCRIPTION", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem. Quisque tincidunt magna id fringilla accumsan. In dignissim a ipsum nec placerat. Nam commodo dui rutrum, convallis risus nec, mattis velit. Phasellus nec mattis libero, in dignissim nibh.");
 
