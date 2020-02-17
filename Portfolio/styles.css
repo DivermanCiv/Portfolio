@@ -143,6 +143,7 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 #contact li.linkedin_icon::before{content:url("Images/linkedin.png"); position:absolute;left:-25px;}
 #contact li.web_icon::before{content: url("Images/web.svg"); position: absolute; left:-25px;}
 li.web_icon a{text-decoration: none; font-weight:bold;color: cadetblue;}
+li.linkedin_icon a{text-decoration: none; font-weight:bold;color: cadetblue;}
 
 
 

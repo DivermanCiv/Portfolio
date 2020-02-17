@@ -20,6 +20,7 @@ catch (Exception $e)
 
 include("lang_config.php");
 ?>
+
 <!DOCTYPE html>
 <html lang='fr'>
     <head>
@@ -128,11 +129,11 @@ include("lang_config.php");
 <!--                    formulaire.txt à changer -->
 
                     <form action="contact.php" method="post" >
-                        <input type="text" id="name" placeholder="<?php echo _NOM ; ?>"/>
-                        <input type="email" id="email" placeholder="<?php echo _MAIL ; ?>"/>
-                        <input type="text" id="organisation" placeholder="<?php echo _ORGANISATION ; ?>"/>
-                        <input type="tel" id="phone" placeholder="<?php echo _TELEPHONE ; ?>"/>
-                        <textarea id="message" placeholder="<?php echo _MESSAGE_PLACEHOLDER ; ?>"></textarea>
+                        <input type="text" name ="name" id="name" placeholder="<?php echo _NOM ; ?>"/>
+                        <input type="email" name = "email" id="email" placeholder="<?php echo _MAIL ; ?>"/>
+                        <input type="text" name = "organisation" id="organisation" placeholder="<?php echo _ORGANISATION ; ?>"/>
+                        <input type="tel" name = "phone" id="phone" placeholder="<?php echo _TELEPHONE ; ?>"/>
+                        <textarea name ="message" id="message" placeholder="<?php echo _MESSAGE_PLACEHOLDER ; ?>"></textarea>
                         <button type="submit" value="envoyer"><?php echo _ENVOYER; ?></button>
                     </form>
                 </div>
