@@ -8,16 +8,6 @@ catch (Exception $e)
     die('Erreur : '.$e->getMessage());
 }
 
-
-#Afficher des noms venant de la BDD
-//$reponse = $bdd->query('SELECT * FROM admin;');
-//
-//while ($donnee = $reponse->fetch()){
-//    echo $donnee['admin_username'];
-//}
-//$reponse->closeCursor() ;
-
-
 include("lang_config.php");
 ?>
 
@@ -154,6 +144,21 @@ include("lang_config.php");
         <footer>
             <p>&copy; Adam DUPUIS - 2019</p>
         </footer>
+        <script>
+            window.onscroll = function() {myFunction()};
+
+            var navbar = document.getElementById("navigateur");
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+  }
+}
+        
+        </script>
     </body>
         
         
