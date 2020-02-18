@@ -9,6 +9,7 @@ catch (Exception $e)
 }
 
 include("lang_config.php");
+include("data_config.php");
 ?>
 
 <!DOCTYPE html>
@@ -71,14 +72,14 @@ include("lang_config.php");
             <h3><?php echo _PORTFOLIO ; ?></h3>
             <div>
                 <div class="portfolio_box">
-                    <img src="Images/info7.jpg" alt ="" title="">
+                    <img src="Images/cybertrace.png" alt ="" title="">
                     <div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem.</p>
                         <p>#Lorem #Ipsum</p>
                     </div>
                 </div>
                 <div class="portfolio_box">
-                    <img src="Images/info8.jpg" alt ="" title="">
+                    <img src="Images/%C3%A9p%C3%A9ehache%C3%A9p%C3%A9e.png" alt ="" title="">
                     <div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem.</p>
                         <p>#Lorem #Ipsum</p>
@@ -98,15 +99,35 @@ include("lang_config.php");
         <section id="references">
             <h3><?php echo _REFERENCES ; ?></h3>
             <div>
+                <?php
+                while ($datatestimonial = $reqtestimonial ->  fetch())
+                {
+                ?>
                 
-                <img src="Images/double_arrow.svg" alt="arrow" title="arrow">
                 <div>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem."</p>
-                    <p>Bob G. Inventé, <span><?php echo "PDG " . _A . " Famous Company";?></span></p>
+                    <p><?php echo $datatestimonial['testimonial_content']; ?></p>
+                    <p><?php echo $datatestimonial['user_username'].", "; ?> 
+                    <span><?php echo $datatestimonial["testimonial_position"]." " . _A ; ?> 
+                    <?php
+                    if ($datatestimonial['testimonial_website']!=NULL){
+                        echo "<a href= ' ".$datatestimonial['testimonial_website']." ' >".$datatestimonial['testimonial_organisation'] ."</a>" ;
+                    }
+                    else {
+                        echo $datatestimonial['testimonial_organisation'] ;
+                    }
+                }
+                        ?>
+                    </span>
+                    </p>
                 </div>
-                <img src="Images/double_arrow.svg" alt="arrow" title="arrow">
-
-                </div>    
+                <div>
+                    <form action="portfolio.php#references" method="post">
+                        <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor1 ?>" value="reference1"></button>
+                        <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor2 ?>" value="reference2"></button>
+                        <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor3 ?>" value="reference3"></button>
+                    </form>
+                </div>
+            </div>    
             
         </section>
         
@@ -132,7 +153,7 @@ include("lang_config.php");
                     <ul>
                         <li class="pin_icon">17 Boulevard Voltaire - 35000 Rennes</li>
                         <li class="phone_icon">+33 6 11 20 74 68</li>
-                        <li class="mail_icon">adamdupuis@laposte.net</li>
+<!--                        <li class="mail_icon">adamdupuis@laposte.net</li>-->
                         <li class= "linkedin_icon"><a href="https://www.linkedin.com/in/adam-dupuis/" target="_blank" >Linkedin</a></li>
                         <li class="web_icon"><?php echo _WEB_SITE; ?></li>
                     </ul>
@@ -143,7 +164,14 @@ include("lang_config.php");
 <!--        -------------------------------FOOTER---------------------------------->
         <footer>
             <p>&copy; Adam DUPUIS - 2019</p>
+            <a href="mentionslegales.html"><?php echo _MENTIONSLEGALES ; ?></a>
         </footer>
+        
+<!--        ON FERME ICI TOUT LES CURSEURS POUR STOPPER LES TRAITEMENTS DE REQUETES UTILISES -->
+        <?php
+        $reqtestimonial -> closeCursor(); #Stoppe le traitement de la requête 
+        
+        ?>
         <script>
             window.onscroll = function() {myFunction()};
 

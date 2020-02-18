@@ -39,5 +39,11 @@ define ("_MESSAGE_PLACEHOLDER", "Your message");
 define("_ENVOYER", "Submit");
 
 
-define ("_WEB_SITE", "You already are on my site! But you can go back to the <a href=\"#banner\">home page</a>")
+define ("_WEB_SITE", "You already are on my site! But you can go back to the <a href=\"#banner\">home page</a>");
+
+define ("_MENTIONSLEGALES", "Legal Notice");
+    
+
+
 ?>
+

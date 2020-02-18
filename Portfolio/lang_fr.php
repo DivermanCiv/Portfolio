@@ -37,6 +37,8 @@ define ("_TELEPHONE", "Téléphone");
 define ("_MESSAGE_PLACEHOLDER", "Votre message");
 define("_ENVOYER", "Envoyer");
 
-define ("_WEB_SITE", "Vous êtes déjà sur mon site ! Mais vous pouvez revenir à la page d'<a href=\"#banner\">accueil</a>")
+define ("_WEB_SITE", "Vous êtes déjà sur mon site ! Mais vous pouvez revenir à la page d'<a href=\"#banner\">accueil</a>");
+
+define ("_MENTIONSLEGALES", "Mentions Légales");
 
 ?>

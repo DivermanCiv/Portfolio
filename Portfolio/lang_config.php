@@ -25,4 +25,7 @@ switch($_SESSION["lang"]){
 }
 
 include ($language_file);
+
+
+
 ?>

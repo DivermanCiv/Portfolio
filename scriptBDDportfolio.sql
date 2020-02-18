@@ -45,6 +45,7 @@ DROP TABLE IF EXISTS testimonial ;
 CREATE TABLE testimonial (ID_testimonial int AUTO_INCREMENT NOT NULL,
 testimonial_content TEXT,
 testimonial_position VARCHAR(255),
+testimonial_organisation VARCHAR(255),
 testimonial_website VARCHAR(255),
 ID_user int NOT NULL,
 PRIMARY KEY (ID_testimonial) ) ENGINE=InnoDB;
@@ -143,5 +144,8 @@ ALTER TABLE associate ADD CONSTRAINT FK_associate_ID_keywords FOREIGN KEY (ID_ke
 
 ALTER TABLE associate ADD CONSTRAINT FK_associate_ID_project FOREIGN KEY (ID_project) REFERENCES project (ID_project);
 
-INSERT INTO admin (admin_username, admin_password, admin_mail) VALUES ('Adam', 'PortfolioR00t', 'adamdupuis@laposte.net');
+INSERT INTO admin (admin_username, admin_password, admin_mail) VALUES ('Adam Dupuis', 'PortfolioR00t', 'adamdupuis@laposte.net');
 
+INSERT INTO user (ID_user, user_username, user_mail) VALUES (1, 'Adam Dupuis', 'adamdupuis@laposte.net');
+
+INSERT INTO testimonial (testimonial_content, testimonial_position, testimonial_organisation, testimonial_website, ID_user) VALUES ('Adam est vraiment remarquable, et je ne dis pas ça parce qu\'il s\'agit de moi-même !', 'Développeur', 'Indépendant', 'https://www.adamdupuis.fr', 1), ('Adam est vraiment remarquable, et je ne dis pas ça parce qu\'il s\'agit encore de moi-même !', 'Développeur bis', 'Indépendant toujours', 'https://www.adamdupuis.fr', 1);
