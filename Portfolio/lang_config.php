@@ -1,4 +1,6 @@
 <?php
+
+ 
 if (empty($_GET['lang'])){
     $_SESSION['lang'] = "fr";
 }

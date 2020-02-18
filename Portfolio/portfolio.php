@@ -7,9 +7,10 @@ catch (Exception $e)
 {
     die('Erreur : '.$e->getMessage());
 }
-
 include("lang_config.php");
 include("data_config.php");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +106,26 @@ include("data_config.php");
                 ?>
                 
                 <div>
-                    <p><?php echo $datatestimonial['testimonial_content']; ?></p>
+                    <?php
+                        if ($_SESSION['lang'] == "fr"){
+                            if (empty($datatestimonial['testimonial_content_fr'])){
+                                define ("_REFCONTENT", "Oups, cette référence n'a pas encore été traduite en français !");
+                            }
+                            else {
+                                define ("_REFCONTENT", $datatestimonial['testimonial_content_fr']);
+                            }
+                        }
+                        elseif ($_SESSION['lang'] == "en"){
+                            if (empty($datatestimonial['testimonial_content_en'])){
+                                define ("_REFCONTENT", "Oops, this testimonial hasn't been translated in english yet!");
+                            }
+                            else{
+                                define ("_REFCONTENT", $datatestimonial['testimonial_content_en']);
+                            }
+                        }
+                    ?>
+                    
+                    <p><?php echo _REFCONTENT ; ?></p>
                     <p><?php echo $datatestimonial['user_username'].", "; ?> 
                     <span><?php echo $datatestimonial["testimonial_position"]." " . _A ; ?> 
                     <?php
@@ -121,7 +141,7 @@ include("data_config.php");
                     </p>
                 </div>
                 <div>
-                    <form action="portfolio.php#references" method="post">
+                    <form action="<?php echo _FORMPORTFOLIOREFERENCE ?>" method="post">
                         <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor1 ?>" value="reference1"></button>
                         <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor2 ?>" value="reference2"></button>
                         <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor3 ?>" value="reference3"></button>

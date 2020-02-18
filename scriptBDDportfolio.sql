@@ -16,8 +16,8 @@ PRIMARY KEY (ID_admin) ) ENGINE=InnoDB;
 DROP TABLE IF EXISTS user ;
 
 CREATE TABLE user (ID_user int AUTO_INCREMENT NOT NULL,
-user_username VARCHAR(255),
-user_mail VARCHAR(255),
+user_username VARCHAR(255) NOT NULL,
+user_mail VARCHAR(255) NOT NULL,
 PRIMARY KEY (ID_user) ) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS project ;
@@ -43,7 +43,8 @@ PRIMARY KEY (ID_contact) ) ENGINE=InnoDB;
 DROP TABLE IF EXISTS testimonial ;
 
 CREATE TABLE testimonial (ID_testimonial int AUTO_INCREMENT NOT NULL,
-testimonial_content TEXT,
+testimonial_content_fr TEXT,
+testimonial_content_en TEXT,
 testimonial_position VARCHAR(255),
 testimonial_organisation VARCHAR(255),
 testimonial_website VARCHAR(255),
@@ -146,6 +147,6 @@ ALTER TABLE associate ADD CONSTRAINT FK_associate_ID_project FOREIGN KEY (ID_pro
 
 INSERT INTO admin (admin_username, admin_password, admin_mail) VALUES ('Adam Dupuis', 'PortfolioR00t', 'adamdupuis@laposte.net');
 
-INSERT INTO user (ID_user, user_username, user_mail) VALUES (1, 'Adam Dupuis', 'adamdupuis@laposte.net');
+INSERT INTO user (ID_user, user_username, user_mail) VALUES (1, 'Adam Dupuis', 'adamdupuis@laposte.net'), (2, 'Test Boy', 'test@test.com'), (3, 'Jean-Bob Dufour', 'jean@bob.fr');
 
-INSERT INTO testimonial (testimonial_content, testimonial_position, testimonial_organisation, testimonial_website, ID_user) VALUES ('Adam est vraiment remarquable, et je ne dis pas ça parce qu\'il s\'agit de moi-même !', 'Développeur', 'Indépendant', 'https://www.adamdupuis.fr', 1), ('Adam est vraiment remarquable, et je ne dis pas ça parce qu\'il s\'agit encore de moi-même !', 'Développeur bis', 'Indépendant toujours', 'https://www.adamdupuis.fr', 1);
+INSERT INTO testimonial (testimonial_content_fr, testimonial_content_en, testimonial_position, testimonial_organisation, testimonial_website, ID_user) VALUES ('Adam est vraiment remarquable, et je ne dis pas ça parce qu\'il s\'agit de moi-même !', '', 'Développeur', 'Indépendant', 'https://www.adamdupuis.fr', 1), ('Adam est un incroyable développeur talentueux et vraiment super sympa. Epouse-moi s\'il te plaît !', '', 'Leche-botte', 'Cool Inc', '', 2), ('', 'A real talented developer, able to learn very quickly. I warmly recommend him!', 'PDG', 'Random Company', '', 3);

@@ -6,7 +6,6 @@ define ("_DEVELOPPEUR","Developper");
 define ("_SUR_RENNES","living in Rennes");
 define ("_SAVOIR_PLUS", "Do you want to know more?");
 
-
 #Banner
 define("_ACCUEIL", "Home");
 define("_A_PROPOS", "About Me");
@@ -26,6 +25,7 @@ define ("_OBTENIR_CV", "<a href='Resume_Adam_Dupuis.pdf' target='_blank'>Get my 
 #Références
 define("_A","at");
 
+define ("_FORMPORTFOLIOREFERENCE", " portfolio.php?lang=en#references ");
 #Contact
 
 define ("_LAISSEZ_MESSAGE", "Leave me a message...");

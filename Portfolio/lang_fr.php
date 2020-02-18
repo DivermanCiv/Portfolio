@@ -23,7 +23,10 @@ define("_DESCRIPTION", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 define ("_OBTENIR_CV", "<a href='CV_Adam_Dupuis.pdf' target='_blank'>Obtenez mon CV (50 KO)</a>");
 
 #Références
+
 define("_A","à");
+
+define ("_FORMPORTFOLIOREFERENCE", " portfolio.php?lang=fr#references ");
 
 #Contact
 

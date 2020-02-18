@@ -101,15 +101,13 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 
 .portfolio_box>div{height: 300px; width:400px; background-color: cadetblue;position: absolute;top:180px;border-radius: 15px;}
 
-.portfolio_box img:hover{opacity: 0.2;}
+.portfolio_box img:hover{opacity: 0.1;}
 
 
 
 
 /****************************REFERENCES************************************/
 #references>div{display: flex; flex-flow: column wrap; justify-content: space-around; align-items: center; width:80%; margin:0 10%; padding : 2% 0%; height:100%;background-color: white; border-radius: 100px;}
-
-#references img{width:30px;height:30px;}
 
 #references>div>div:first-child{display: flex; flex-flow:column wrap; justify-content: space-around; height: 100px;width: 50%;}
 
@@ -119,6 +117,8 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 
 #references>div>div>p:nth-child(2){text-align: end; font:italic 16px "police1", sans-serif;}
 #references span{font: 14px "police1", sans-serif;}
+
+#references a{text-decoration: none; color:cadetblue;}
 
 
 /*Boutons pour passer d'une référence à une autre */
