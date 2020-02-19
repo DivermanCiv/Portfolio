@@ -80,7 +80,7 @@ include("data_config.php");
                     </div>
                 </div>
                 <div class="portfolio_box">
-                    <img src="Images/%C3%A9p%C3%A9ehache%C3%A9p%C3%A9e.png" alt ="" title="">
+                    <img src="Images/epee_hache_epee.png" alt ="" title="">
                     <div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem.</p>
                         <p>#Lorem #Ipsum</p>
@@ -147,8 +147,24 @@ include("data_config.php");
                         <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor3 ?>" value="reference3"></button>
                     </form>
                 </div>
-            </div>    
-            
+            </div>
+            <p id ="travailler_ensemble"><?php echo _TRAVAILLER_ENSEMBLE ; ?></p>
+            <a class="afficher_masquer" onclick ="ShowHide();"><?php echo _AFFICHER_MASQUER ; ?></a>
+            <div id ="flop" class ="testimonial_submit">
+                <form  action ="<?php echo _FORM_ADD_REFERENCE ?>" method="post">
+                    <input type ="text" name = 'name' placeholder="<?php echo _NOM ; ?>" required/>
+                    <input id="testimonial_mail" type="email" name = "email" placeholder="<?php echo _MAIL ; ?>" required/>
+                    <input type="text" name= "position" placeholder ="<?php echo _POSITION ; ?>" required/>
+                    <input type="text" name = "organisation" placeholder="<?php echo _ORGANISATION ; ?> " required/>
+                    <input type="text" name = "website" placeholder="<?php echo _WEBSITE ; ?>"/>
+                    <textarea name ="testimonial" placeholder="<?php echo _TESTIMONIAL_PLACEHOLDER ; ?>" required></textarea>
+                    <button type="submit" value="envoyer"><?php echo _ENVOYER; ?></button>
+                </form>
+            </div>
+            <?php if (!empty($_POST["testimonial"])){
+                        echo "<p id='thank_you_testimonial'>". _THANKS_TESTIMONIAL . "</p>"; 
+                    }
+                    ?>
         </section>
         
 <!--        --------------------------CONTACT------------------------------------->
@@ -160,11 +176,11 @@ include("data_config.php");
 <!--                    formulaire.txt à changer -->
 
                     <form action="contact.php" method="post" >
-                        <input type="text" name ="name" id="name" placeholder="<?php echo _NOM ; ?>"/>
-                        <input type="email" name = "email" id="email" placeholder="<?php echo _MAIL ; ?>"/>
+                        <input type="text" name ="name" id="name" placeholder="<?php echo _NOM ; ?>" required/>
+                        <input type="email" name = "email" id="email" placeholder="<?php echo _MAIL ; ?>" required/>
                         <input type="text" name = "organisation" id="organisation" placeholder="<?php echo _ORGANISATION ; ?>"/>
                         <input type="tel" name = "phone" id="phone" placeholder="<?php echo _TELEPHONE ; ?>"/>
-                        <textarea name ="message" id="message" placeholder="<?php echo _MESSAGE_PLACEHOLDER ; ?>"></textarea>
+                        <textarea name ="message" id="message" placeholder="<?php echo _MESSAGE_PLACEHOLDER ; ?>" required></textarea>
                         <button type="submit" value="envoyer"><?php echo _ENVOYER; ?></button>
                     </form>
                 </div>
@@ -193,6 +209,7 @@ include("data_config.php");
         
         ?>
         <script>
+            //Fonction Javascript pour coller la barre de navigation au haut de la page
             window.onscroll = function() {myFunction()};
 
             var navbar = document.getElementById("navigateur");
@@ -205,7 +222,20 @@ include("data_config.php");
                     navbar.classList.remove("sticky");
   }
 }
-        
+            //Fonction pour afficher/cacher des balises lorsque l'on clique sur un bouton
+            function ShowHide(){
+                if (addr.id == "flip") {
+                    addr.id = "flop";
+                }
+                else {
+                    addr.id = "flip";
+                }
+            }
+            
+            window.onload = function(){
+                addr = document.getElementById("flop");
+            }
+            
         </script>
     </body>
         

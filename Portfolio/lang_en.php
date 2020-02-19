@@ -26,6 +26,17 @@ define ("_OBTENIR_CV", "<a href='Resume_Adam_Dupuis.pdf' target='_blank'>Get my 
 define("_A","at");
 
 define ("_FORMPORTFOLIOREFERENCE", " portfolio.php?lang=en#references ");
+
+
+define ("_TRAVAILLER_ENSEMBLE","Did we work together? ");
+define ("_AFFICHER_MASQUER", "Add a testimonial");
+
+define ("_FORM_ADD_REFERENCE", "portfolio.php?lang=en#travailler_ensemble");
+define ("_POSITION","Position");
+define ("_WEBSITE","Website");
+define ("_TESTIMONIAL_PLACEHOLDER", "Your testimonial");
+
+define ('_THANKS_TESTIMONIAL', "Thank you for your message! It will be displayed as soon as censorship is applied!");
 #Contact
 
 define ("_LAISSEZ_MESSAGE", "Leave me a message...");
@@ -33,7 +44,7 @@ define ("_CONTACT_DIRECT", "... Or contact me now!");
 
 define("_NOM", "Name");
 define ("_MAIL", "Mail");
-define ("_ORGANISATION", "Organisation/Association");
+define ("_ORGANISATION", "Organisation");
 define ("_TELEPHONE", "Phone number");
 define ("_MESSAGE_PLACEHOLDER", "Your message");
 define("_ENVOYER", "Submit");

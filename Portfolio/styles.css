@@ -55,9 +55,9 @@ h1{color:white;font: 40px 'police1', sans-serif;}
 
 /*navigateur*/
 
-nav{position: relative; overflow: hidden; background-color: white; display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; width: 100%; height: 50px; padding:0 20%; border-bottom: 6px; border-bottom-style: groove; z-index: 10;}
+nav{position: relative; overflow: hidden; background-color: white; display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; width: 100%; height: 50px; padding:0 15%; border-bottom: 6px; border-bottom-style: groove; z-index: 10;}
 
-nav a{text-decoration: none; color:black; font: 16px 'police1', sans-serif; text-transform: uppercase; padding: 5% 5%;}
+nav a{text-decoration: none; color:black; font: 16px 'police1', sans-serif; text-transform: uppercase; padding: 5% 5%; width:100%; text-align: center;}
 
 nav a:hover{background-color:cadetblue; color:white;}
 
@@ -90,16 +90,18 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 
 /************************************PORTFOLIO**************************************/
 
-#portfolio{position: relative; z-index: 0;}
-#portfolio img{height:300px; width:400px;position: relative;z-index: 2;border-radius: 15px;}
+#portfolio{position: relative; z-index: 0; }
+#portfolio img{height:300px; width:400px;position: absolute; z-index: 2;border-radius: 15px;}
 
-#portfolio>div{display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center;width:80%; margin:0 10%;}
+#portfolio>div{display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center;width:80%; margin:0 10%;}
 
 #portfolio p:first-child{ color:white;z-index:1;position: relative; font: 16px "police1", sans-serif; justify-content: space-around; align-items: center; height:280px; text-align: center; padding:100px 20px;}
 
 #portfolio p:nth-child(2){color:white; position: relative;font:16px "police1", sans-serif;height: 20px; text-align: end;padding-right: 20px;}
 
-.portfolio_box>div{height: 300px; width:400px; background-color: cadetblue;position: absolute;top:180px;border-radius: 15px;}
+.portfolio_box{padding:3% 3%;}
+
+.portfolio_box>div{height: 300px; width:400px; background-color: cadetblue;position: relative;border-radius: 15px;}
 
 .portfolio_box img:hover{opacity: 0.1;}
 
@@ -107,11 +109,13 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 
 
 /****************************REFERENCES************************************/
-#references>div{display: flex; flex-flow: column wrap; justify-content: space-around; align-items: center; width:80%; margin:0 10%; padding : 2% 0%; height:100%;background-color: white; border-radius: 100px;}
 
-#references>div>div:first-child{display: flex; flex-flow:column wrap; justify-content: space-around; height: 100px;width: 50%;}
 
-#references>div>div:nth-child(2){display:flex;flex-flow: row wrap; justify-content: center;}
+#references>div:nth-child(2){display: flex; flex-flow: column nowrap; justify-content: space-around; align-items: center; width:80%; margin:1% 10%; padding : 2% 0%; height:200px;background-color: white; border-radius: 100px;}
+
+#references>div>div:first-child{display: flex; flex-flow:column wrap; justify-content: space-around; height: 100%;width: 50%;}
+
+#references>div>div:nth-child(2){display:flex;flex-flow: row wrap; justify-content: center;align-content: flex-end; margin-top:20px;}
 
 #references>div>div>p:first-child{font: 20px Arial, sans-serif; text-align: center;}
 
@@ -128,6 +132,22 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 .white {width : 20px; height: 20px; background-color: white;border-radius: 50px; border-color:black; margin : 5px; }
 
 
+/*Ajout de références*/
+#travailler_ensemble {margin: 0 10%; font-weight: bold;}
+.afficher_masquer {height : 30px; width : 80%;margin : 0 10%;}
+#flip{ visibility: visible;display: flex; flex-flow: column wrap; justify-content: space-around; align-items: center; width:80%; margin:1% 10%; padding : 2% 2%; height:100%;background-color: white;border-radius: 25px;}
+#flop{visibility: hidden; height :0px;}
+
+.testimonial_submit{}
+
+.testimonial_submit form{display: flex; flex-flow: row wrap;width: 100%; height: 100%; justify-content: flex-start;}
+.testimonial_submit input{height: 30px; width: 30%; background-color:  beige; margin : 0 1% 1% 0;}
+.testimonial_mail{margin-right: 15%;}
+.testimonial_submit textarea{width:100%; height:100px;background-color: beige;margin : 0 1% 1% 0;}
+.testimonial_submit button{background-color: beige; border-radius:10px; padding: 10px 25px; background-color:cadetblue; font:16px "police1", sans-serif;}
+.testimonial_submit button:hover{color:white;}
+
+#thank_you_testimonial {width : 80%; margin : 0 10%;}
 
 /**********************************CONTACT**********************************/
 
@@ -166,4 +186,15 @@ li.linkedin_icon a{text-decoration: none; font-weight:bold;color: cadetblue;}
 footer{display: flex; flex-flow: row wrap; justify-content: space-around;}
 footer p{color:grey;}
 footer a {color:grey; text-decoration: none;}
+
+
+
+
+/****************************RESPONSIVE***************************************/
+
+
+@media (max-width:1200px){
+    
+    
+}
 

@@ -15,9 +15,9 @@ $message = $_POST['message'];
 $phone = $_POST['phone'];
 $orga = $_POST['organisation'];
 
-$reponse1 = $bdd-> prepare('INSERT INTO user (user_username, user_mail) VALUES (:nom, :mail)');
+$reponse = $bdd-> prepare('INSERT INTO user (user_username, user_mail) VALUES (:nom, :mail)');
 
-$reponse1 -> execute(array(
+$reponse -> execute(array(
    'nom' => $name,
     'mail'=> $email
 ));
@@ -25,10 +25,10 @@ $reponse1 -> execute(array(
 $last_id = $bdd -> lastInsertId();
 
 
-$reponse2 = $bdd-> prepare('INSERT INTO contact (ID_user, contact_message, contact_phone, contact_organisation) VALUES (:id, :message, :telephone, :organisation)');
+$reponse = $bdd-> prepare('INSERT INTO contact (ID_user, contact_message, contact_phone, contact_organisation) VALUES (:id, :message, :telephone, :organisation)');
 
 
-$reponse2 -> execute(array(
+$reponse -> execute(array(
     'id'=> $last_id,
     'message' => $message,
     'telephone'=> $phone,
