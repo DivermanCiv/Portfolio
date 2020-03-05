@@ -72,27 +72,8 @@ include("data_config.php");
         <section id="portfolio">
             <h3><?php echo _PORTFOLIO ; ?></h3>
             <div>
-                <div class="portfolio_box">
-                    <img src="Images/cybertrace.png" alt ="" title="">
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem.</p>
-                        <p>#Lorem #Ipsum</p>
-                    </div>
-                </div>
-                <div class="portfolio_box">
-                    <img src="Images/epee_hache_epee.png" alt ="" title="">
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem.</p>
-                        <p>#Lorem #Ipsum</p>
-                    </div>
-                </div>
-                <div class="portfolio_box">
-                    <img src="Images/info9.jpg" alt ="" title="">
-                    <div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem.</p>
-                        <p>#Lorem #Ipsum</p>
-                    </div>
-                </div>
+                <?php include ("project_portfolio.php"); ?>
+                
             </div>
         </section>
         
@@ -142,7 +123,7 @@ include("data_config.php");
                 </div>
                 <div>
                     <form action="<?php echo _FORMPORTFOLIOREFERENCE ?>" method="post">
-                        <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor1 ?>" value="reference1"></button>
+                        <button name ="testimonialreference" type ="submit" class="<?= $buttoncolor1 ?>" value="reference1"></button>
                         <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor2 ?>" value="reference2"></button>
                         <button name ="testimonialreference" type ="submit" class="<?php echo $buttoncolor3 ?>" value="reference3"></button>
                     </form>
@@ -187,7 +168,7 @@ include("data_config.php");
                 <div>
                     <h4><?php echo _CONTACT_DIRECT ; ?></h4>
                     <ul>
-                        <li class="pin_icon">17 Boulevard Voltaire - 35000 Rennes</li>
+                        <li class="pin_icon">Rennes (35000)</li>
                         <li class="phone_icon">+33 6 11 20 74 68</li>
 <!--                        <li class="mail_icon">adamdupuis@laposte.net</li>-->
                         <li class= "linkedin_icon"><a href="https://www.linkedin.com/in/adam-dupuis/" target="_blank" >Linkedin</a></li>

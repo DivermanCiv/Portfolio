@@ -24,6 +24,7 @@ DROP TABLE IF EXISTS project ;
 
 CREATE TABLE project (ID_project int AUTO_INCREMENT NOT NULL,
 project_image VARCHAR(255),
+project_link VARCHAR(255),
 project_fr_name VARCHAR(255),
 project_fr_text TEXT,
 project_en_name VARCHAR(255),

@@ -104,6 +104,7 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 .portfolio_box>div{height: 300px; width:400px; background-color: cadetblue;position: relative;border-radius: 15px;}
 
 .portfolio_box img:hover{opacity: 0.1;}
+.portfolio_box a{z-index = 20;}
 
 
 

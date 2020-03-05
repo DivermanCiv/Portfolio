@@ -15,24 +15,28 @@ catch (Exception $e)
 #Gestion des références à afficher 
 
 if (isset($_POST['testimonialreference'])){
+    $buttoncolor2 = "white";
+    $buttoncolor3 = "white";
+    $buttoncolor1 = "white";
+
     switch ($_POST['testimonialreference']){
+        
         case 'reference1':
             $numtestimonial = 1;
             $buttoncolor1 = "blue";
-            $buttoncolor2 = "white";
-            $buttoncolor3 = "white";
+            
             break;
         case 'reference2':
             $numtestimonial = 2;
             $buttoncolor2 = "blue";
-            $buttoncolor1 = "white";
-            $buttoncolor3 = "white";
             break;
         case 'reference3':
             $numtestimonial = 3;
             $buttoncolor3 = "blue";
-            $buttoncolor2 = "white";
-            $buttoncolor1 = "white";
+            break;
+        default :
+            $numtestimonial = 1;
+            $buttoncolor1 = "blue";
             break;
         
     }

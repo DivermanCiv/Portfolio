@@ -35,7 +35,7 @@ define ("_AFFICHER_MASQUER", "Ajouter une référence");
 define ("_FORM_ADD_REFERENCE", "portfolio.php?lang=fr#travailler_ensemble");
 define ("_POSITION","Poste");
 define ("_WEBSITE","Site internet");
-define ("_TESTIMONIAL_PLACEHOLDER", "Your testimonial");
+define ("_TESTIMONIAL_PLACEHOLDER", "Votre référence");
 
 define ('_THANKS_TESTIMONIAL', "Merci pour votre message ! Celui-ci sera bientôt affiché s'il passe la censure !");
 
