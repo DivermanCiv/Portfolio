@@ -1,5 +1,7 @@
 <?php
 
+$user = $bdd -> prepare ('SELECT * FROM user'); 
+$user -> execute(array()); 
 
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -10,12 +12,23 @@ $orga = $_POST['organisation'];
 
 $reponse = $bdd-> prepare('INSERT INTO user (user_username, user_mail) VALUES (:nom, :mail)');
 
-$reponse -> execute(array(
-   'nom' => $name,
-    'mail'=> $email
-));
 
-$last_id = $bdd -> lastInsertId();
+
+while ($data_user = $user -> fetch()){
+    if ($email = $data_user["user_mail"]){
+        #on doit récupérer le mail (et le nom ?) et l'id associés et les regrouper comme il faut !
+        
+    }
+    else{ # ATTENTION : on ne veut pas que cette commande s'effectue si jamais le if est positif au moins une fois !!! A changer donc ! 
+        $reponse -> execute(array(
+           'nom' => $name,
+            'mail'=> $email
+        ));
+
+        $last_id = $bdd -> lastInsertId();
+    }
+}
+
 
 
 $reponse = $bdd-> prepare('INSERT INTO contact (ID_user, contact_message, contact_phone, contact_organisation) VALUES (:id, :message, :telephone, :organisation)');
@@ -36,4 +49,5 @@ if ($return){
 }
 
 echo "<br><a href=\"portfolio.php\">Retour au site</a>"; 
+
 ?>

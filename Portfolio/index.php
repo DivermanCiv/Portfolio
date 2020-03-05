@@ -10,7 +10,7 @@ catch (Exception $e)
     die('Erreur : '.$e->getMessage());
 }
 include("lang_config.php");
-include("data_config.php");
+
 
 
 ?>
@@ -84,6 +84,7 @@ include("data_config.php");
             <h3><?php echo _REFERENCES ; ?></h3>
             <div>
                 <?php
+                include("testimonial_portfolio.php");
                 while ($datatestimonial = $reqtestimonial ->  fetch())
                 {
                 ?>
