@@ -5,14 +5,6 @@ CREATE DATABASE `portfolio`;
 use  portfolio;
 
 
-DROP TABLE IF EXISTS admin ;
-
-CREATE TABLE admin (ID_admin int AUTO_INCREMENT NOT NULL,
-admin_username VARCHAR(255),
-admin_password VARCHAR(255),
-admin_mail VARCHAR(255),
-PRIMARY KEY (ID_admin) ) ENGINE=InnoDB;
-
 DROP TABLE IF EXISTS user ;
 
 CREATE TABLE user (ID_user int AUTO_INCREMENT NOT NULL,
@@ -145,8 +137,6 @@ ALTER TABLE receive ADD CONSTRAINT FK_receive_ID_contact FOREIGN KEY (ID_contact
 ALTER TABLE associate ADD CONSTRAINT FK_associate_ID_keywords FOREIGN KEY (ID_keywords) REFERENCES keywords (ID_keywords);
 
 ALTER TABLE associate ADD CONSTRAINT FK_associate_ID_project FOREIGN KEY (ID_project) REFERENCES project (ID_project);
-
-INSERT INTO admin (admin_username, admin_password, admin_mail) VALUES ('Adam Dupuis', 'PortfolioR00t', 'adamdupuis@laposte.net');
 
 INSERT INTO user (ID_user, user_username, user_mail) VALUES (1, 'Adam Dupuis', 'adamdupuis@laposte.net'), (2, 'Test Boy', 'test@test.com'), (3, 'Jean-Bob Dufour', 'jean@bob.fr');
 
