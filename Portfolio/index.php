@@ -1,6 +1,8 @@
 <?php
+
+include ("admin_config.php");
 try{
-    $bdd= new PDO('mysql:host=localhost;dbname=portfolio;charset=utf8','root','root');
+    $bdd= new PDO($dsn,$username,$password);
 }
 
 catch (Exception $e)
@@ -25,8 +27,8 @@ include("data_config.php");
         <header>
             <div id="banner">  <!--banner-->
                 <div id="languages"> <!--1st line-->
-                    <a href="portfolio.php?lang=fr"><img class='french flag' src="Images/french.png" alt="french flag" title="french"/></a>
-                    <a href="portfolio.php?lang=en"><img class="english flag" src="Images/english.png" alt="union jack" title="english"/></a>
+                    <a href="index.php?lang=fr"><img class='french flag' src="Images/french.png" alt="french flag" title="french"/></a>
+                    <a href="index.php?lang=en"><img class="english flag" src="Images/english.png" alt="union jack" title="english"/></a>
                     
                 </div>
                 <div id="welcome">

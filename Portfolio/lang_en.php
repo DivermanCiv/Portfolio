@@ -25,13 +25,13 @@ define ("_OBTENIR_CV", "<a href='Resume_Adam_Dupuis.pdf' target='_blank'>Get my 
 #Références
 define("_A","at");
 
-define ("_FORMPORTFOLIOREFERENCE", " portfolio.php?lang=en#references ");
+define ("_FORMPORTFOLIOREFERENCE", " index.php?lang=en#references ");
 
 
 define ("_TRAVAILLER_ENSEMBLE","Did we work together? ");
 define ("_AFFICHER_MASQUER", "Add a testimonial");
 
-define ("_FORM_ADD_REFERENCE", "portfolio.php?lang=en#travailler_ensemble");
+define ("_FORM_ADD_REFERENCE", "index.php?lang=en#travailler_ensemble");
 define ("_POSITION","Position");
 define ("_WEBSITE","Website");
 define ("_TESTIMONIAL_PLACEHOLDER", "Your testimonial");
