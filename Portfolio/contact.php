@@ -1,5 +1,14 @@
 <?php
+include ("admin_config.php");
 
+try{
+    $bdd= new PDO($dsn,$username,$password);
+}
+
+catch (Exception $e)
+{
+    die('Erreur : '.$e->getMessage());
+}
 $user = $bdd -> prepare ('SELECT * FROM user'); 
 $user -> execute(array()); 
 
@@ -13,29 +22,29 @@ $orga = $_POST['organisation'];
 $reponse = $bdd-> prepare('INSERT INTO user (user_username, user_mail) VALUES (:nom, :mail)');
 
 
-
+$user_already_exists = FALSE; 
 while ($data_user = $user -> fetch()){
-    if ($email = $data_user["user_mail"]){
-        #on doit récupérer le mail (et le nom ?) et l'id associés et les regrouper comme il faut !
-        
+    if ($email == $data_user["user_mail"]){
+        $id = $data_user ["ID_user"]; 
+        $user_already_exists = TRUE; 
     }
-    else{ # ATTENTION : on ne veut pas que cette commande s'effectue si jamais le if est positif au moins une fois !!! A changer donc ! 
+}
+
+if ($user_already_exists==FALSE){ 
         $reponse -> execute(array(
            'nom' => $name,
             'mail'=> $email
         ));
 
-        $last_id = $bdd -> lastInsertId();
+        $id = $bdd -> lastInsertId();
     }
-}
-
 
 
 $reponse = $bdd-> prepare('INSERT INTO contact (ID_user, contact_message, contact_phone, contact_organisation) VALUES (:id, :message, :telephone, :organisation)');
 
 
 $reponse -> execute(array(
-    'id'=> $last_id,
+    'id'=> $id,
     'message' => $message,
     'telephone'=> $phone,
     'organisation'=> $orga
@@ -48,6 +57,6 @@ if ($return){
     echo "Votre message a été envoyé, je vous répondrai prochainement !";
 }
 
-echo "<br><a href=\"portfolio.php\">Retour au site</a>"; 
+echo "<br><a href=\"index.php\">Retour au site</a>"; 
 
 ?>
