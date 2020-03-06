@@ -31,7 +31,6 @@ CREATE TABLE contact (ID_contact int AUTO_INCREMENT NOT NULL,
 contact_message TEXT,
 contact_date TIMESTAMP,
 ID_user int NOT NULL,
-ID_message_status int NOT NULL,
 PRIMARY KEY (ID_contact) ) ENGINE=InnoDB;
 
 DROP TABLE IF EXISTS testimonial ;
@@ -48,7 +47,6 @@ DROP TABLE IF EXISTS comment ;
 CREATE TABLE comment (ID_comment int AUTO_INCREMENT NOT NULL,
 comment_date TIMESTAMP,
 comment_text TEXT,
-comment_parent INT,
 ID_project int NOT NULL,
 ID_user int NOT NULL,
 ID_message_status int NOT NULL,
@@ -75,8 +73,6 @@ PRIMARY KEY (ID_keywords,
  ID_project) ) ENGINE=InnoDB;
 
 ALTER TABLE contact ADD CONSTRAINT FK_contact_ID_user FOREIGN KEY (ID_user) REFERENCES user (ID_user);
-
-ALTER TABLE contact ADD CONSTRAINT FK_contact_ID_message_status FOREIGN KEY (ID_message_status) REFERENCES message_status (ID_message_status);
 
 ALTER TABLE testimonial ADD CONSTRAINT FK_testimonial_ID_user FOREIGN KEY (ID_user) REFERENCES user (ID_user);
 

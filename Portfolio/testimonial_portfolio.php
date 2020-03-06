@@ -55,27 +55,27 @@ if (!empty($_POST["testimonial"])){
     $website = $_POST["website"];
     $testimonial = $_POST["testimonial"];
     
-    $reponse = $bdd ->prepare ('INSERT INTO user (user_username, user_mail) VALUES (:nom, :mail)');
+    $reponse = $bdd ->prepare ('INSERT INTO user (user_username, user_mail, user_position, user_organisation, user_website) VALUES (:nom, :mail, :position, :organisation, :website)');
     $reponse -> execute(array(
         'nom' => $name,
-        'mail' => $mail
+        'mail' => $mail,
+        'position' => $position,
+        'organisation' => $organisation,
+        'website' => $website
     ));
     
     $last_id = $bdd -> lastInsertId();
     
     if ($_SESSION["lang"] == "fr"){
-        $reponse = $bdd -> prepare ('INSERT INTO testimonial (ID_user, testimonial_content_fr, testimonial_position, testimonial_organisation, testimonial_website) VALUES (:id, :message, :position, :organisation, :website)');
+        $reponse = $bdd -> prepare ('INSERT INTO testimonial (ID_user, testimonial_content_fr) VALUES (:id, :message)');
     }
     elseif ($_SESSION["lang"] == "en"){
-        $reponse = $bdd -> prepare ('INSERT INTO testimonial (ID_user, testimonial_content_en, testimonial_position, testimonial_organisation, testimonial_website) VALUES (:id, :message, :position, :organisation, :website)');
+        $reponse = $bdd -> prepare ('INSERT INTO testimonial (ID_user, testimonial_content_en) VALUES (:id, :message)');
     }
     
     $reponse -> execute(array(
         'id'=> $last_id,
-        'message' => $testimonial,
-        'position' => $position,
-        'organisation' => $organisation,
-        'website' => $website
+        'message' => $testimonial
         ));
     
     $reponse -> closeCursor();

@@ -13,45 +13,56 @@ $user = $bdd -> prepare ('SELECT * FROM user');
 $user -> execute(array()); 
 
 $name = $_POST['name'];
-$email = $_POST['email'];
-
+$mail = $_POST['email'];
 $message = $_POST['message'];
 $phone = $_POST['phone'];
 $orga = $_POST['organisation'];
+$position = NULL; 
+$website = NULL; 
+$ip = NULL; 
 
-$reponse = $bdd-> prepare('INSERT INTO user (user_username, user_mail) VALUES (:nom, :mail)');
+$insert_into_user = $bdd-> prepare('INSERT INTO user (user_username, user_mail, user_phone, user_organisation, user_position, user_website, user_IP) VALUES (:nom, :mail, :telephone, :organisation, :position, :website, :ip)');
 
+$update_user = $bdd -> prepare('UPDATE user SET user_username = :nom, user_phone = :phone, user_organisation = :organisation, user_position = :position, user_website = :website, user_IP = :ip')
 
-$user_already_exists = FALSE; 
-while ($data_user = $user -> fetch()){
-    if ($email == $data_user["user_mail"]){
-        $id = $data_user ["ID_user"]; 
-        $user_already_exists = TRUE; 
+    
+### CONTINUER A ECRIRE LA FONCTION POUR UPDATE LES INFOS CONCERNANT UN USER DEJA DANS LA BDD ### s
+function add_to_user(){
+    global $name, $mail, $phone, $orga, $user, $insert_into_user;
+    if (!user_exists($user)){ 
+            $insert_into_user -> execute(array(
+               'nom' => $name,
+                'mail'=> $mail,
+                'telephone'=> $phone,
+                'organisation'=> $orga
+            ));
+
+            $id = $bdd -> lastInsertId();
+        }
+    else {
+        if(!is_null($_POST['phone'])){fetch_in_user($phone, "user_phone");}
+        $insert_into_user -> execute(array(
+               'nom' => $name,
+                'mail'=> $mail,
+                'telephone'=> $phone,
+                'organisation'=> $orga
+            ));
     }
 }
 
-if ($user_already_exists==FALSE){ 
-        $reponse -> execute(array(
-           'nom' => $name,
-            'mail'=> $email
-        ));
+add_to_user($insert_into_user); 
 
-        $id = $bdd -> lastInsertId();
-    }
+$insert_into_contact = $bdd-> prepare('INSERT INTO contact (ID_user, contact_message) VALUES (:id, :message)');
 
 
-$reponse = $bdd-> prepare('INSERT INTO contact (ID_user, contact_message, contact_phone, contact_organisation) VALUES (:id, :message, :telephone, :organisation)');
-
-
-$reponse -> execute(array(
+$insert_into_contact -> execute(array(
     'id'=> $id,
     'message' => $message,
-    'telephone'=> $phone,
-    'organisation'=> $orga
+    
 ));
 
 
-$return = mail('adamdupuis@laposte.net', 'Nouveau message de '.$name.' depuis le portfolio',$message.' <br>Organisation : '.$orga.'<br>Telephone : '.$phone , 'From: '.$email );
+$return = mail('adamdupuis@laposte.net', 'Nouveau message de '.$name.' depuis le portfolio',$message.' <br>Organisation : '.$orga.'<br>Telephone : '.$phone , 'From: '.$mail );
 
 if ($return){
     echo "Votre message a été envoyé, je vous répondrai prochainement !";
