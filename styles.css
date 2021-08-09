@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face{font-family : "police1"; src:url("Fonts/LilitaOne-Regular.ttf")}
+
+body{background-color: beige;}
+
+#banner{
+    background-image: url(Images/night_sky_background.jpg);
+    width: 100%;
+    height:980px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+section{display: flex; flex-flow:column wrap;}
+
+/*Languages*/
+#languages {display: flex; flex-flow: row nowrap; justify-content: flex-end;}
+
+
+.flag{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    margin: 5px;
+}
+
+/*welcome*/
+#welcome{display: flex; flex-flow: column wrap; justify-content:space-around; align-items: center; width: 100%;height:900px}
+
+#welcome div{display: flex; flex-flow: column wrap; justify-content: center; align-items: center;width: 100%;}
+
+#welcome div:first-child{height: 50%;}
+
+#welcome p{color:white; font : 20px 'police1', sans-serif;}
+
+#bonjour{position: relative;right:4.5%;}
+#hello{position: relative; right:5.5%;}
+#welcome p:first-child{font-size: 20px; }
+
+#welcome p:nth-child(2){font-size: 50px; text-transform: uppercase;}
+
+h1{color:white;font: 40px 'police1', sans-serif;}
+
+#welcome p:nth-child(4){font-size: 25px}
+
+#welcome p:nth-child(5){font-size: 30px}
+
+
+#welcome img{height:30px; width: 60px;margin-top:10px;}
+
+/*navigateur*/
+
+nav{position: relative; overflow: hidden; background-color: white; display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; width: 100%; height: 50px; padding:0 15%; border-bottom: 6px; border-bottom-style: groove; z-index: 10;}
+
+nav a{text-decoration: none; color:black; font: 16px 'police1', sans-serif; text-transform: uppercase; padding: 5% 5%; width:100%; text-align: center;}
+
+nav a:hover{background-color:cadetblue; color:white;}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+/*******************************ABOUT ME**********************************************/
+
+
+h3 { justify-content: space-around; align-items: center;width:100%;padding:100px 0 50px 0;font : 25px "police1", sans-serif; text-transform: uppercase; text-align: center;}
+
+#about >div{display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; width:60%; margin:0 20%;}
+
+#about img{height:300px; width:300px;float:left; border:solid 5px; border-color: white; border-radius: 20px;}
+
+#profile_box{display: flex; flex-flow: column wrap; justify-content: space-around;align-items: center; height: 300px;width:600px; background-color: white;border:solid 5px; border-color: white; border-radius: 20px;}
+
+
+#profile_box p:first-child{font: 20px Arial, sans-serif; text-transform: uppercase;}
+#profile_box p:nth-child(2){font:16px Arial, sans-serif;}
+#profile_box p:nth-child(3){font:14px Arial, sans-serif; line-height: 20px; margin:0 5%;}
+#profile_box a{ text-align: center; text-decoration: none; color:black; font:16px "police1", sans-serif;  background-color: cadetblue; padding:20px 50px; border-radius: 50px;}
+#profile_box a:hover{color:white;}
+
+
+
+/************************************PORTFOLIO**************************************/
+
+#portfolio{position: relative; z-index: 0; }
+#portfolio img{height:300px; width:400px;position: absolute; z-index: 2;border-radius: 15px;}
+
+#portfolio>div{display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center;width:80%; margin:0 10%;}
+
+#portfolio p:first-child{ color:white;z-index:1;position: relative; font: 16px "police1", sans-serif; justify-content: space-around; align-items: center; height:280px; text-align: center; padding:100px 20px;}
+
+#portfolio p:nth-child(2){color:white; position: relative;font:16px "police1", sans-serif;height: 20px; text-align: end;padding-right: 20px;}
+
+.portfolio_box{padding:3% 3%;}
+
+.portfolio_box>div{height: 300px; width:400px; background-color: cadetblue;position: relative;border-radius: 15px;}
+
+.portfolio_box img:hover{opacity: 0.1;}
+.portfolio_box a{z-index = 20;}
+
+
+
+
+/****************************REFERENCES************************************/
+
+
+#references>div:nth-child(2){display: flex; flex-flow: column nowrap; justify-content: space-around; align-items: center; width:80%; margin:1% 10%; padding : 2% 0%; height:200px;background-color: white; border-radius: 100px;}
+
+#references>div>div:first-child{display: flex; flex-flow:column wrap; justify-content: space-around; height: 100%;width: 50%;}
+
+#references>div>div:nth-child(2){display:flex;flex-flow: row wrap; justify-content: center;align-content: flex-end; margin-top:20px;}
+
+#references>div>div>p:first-child{font: 20px Arial, sans-serif; text-align: center;}
+
+#references>div>div>p:nth-child(2){text-align: end; font:italic 16px "police1", sans-serif;}
+#references span{font: 14px "police1", sans-serif;}
+
+#references a{text-decoration: none; color:cadetblue;}
+
+
+/*Boutons pour passer d'une référence à une autre */
+
+.blue {width : 20px; height: 20px; background-color: cadetblue;border-radius: 50px; border-color:black; margin : 5px; }
+
+.white {width : 20px; height: 20px; background-color: white;border-radius: 50px; border-color:black; margin : 5px; }
+
+
+/*Ajout de références*/
+#travailler_ensemble {margin: 0 10%; font-weight: bold;}
+.afficher_masquer {height : 30px; width : 80%;margin : 0 10%;}
+#flip{ visibility: visible;display: flex; flex-flow: column wrap; justify-content: space-around; align-items: center; width:80%; margin:1% 10%; padding : 2% 2%; height:100%;background-color: white;border-radius: 25px;}
+#flop{visibility: hidden; height :0px;}
+
+.testimonial_submit{}
+
+.testimonial_submit form{display: flex; flex-flow: row wrap;width: 100%; height: 100%; justify-content: flex-start;}
+.testimonial_submit input{height: 30px; width: 30%; background-color:  beige; margin : 0 1% 1% 0;}
+.testimonial_mail{margin-right: 15%;}
+.testimonial_submit textarea{width:100%; height:100px;background-color: beige;margin : 0 1% 1% 0;}
+.testimonial_submit button{background-color: beige; border-radius:10px; padding: 10px 25px; background-color:cadetblue; font:16px "police1", sans-serif;}
+.testimonial_submit button:hover{color:white;}
+
+#thank_you_testimonial {width : 80%; margin : 0 10%;}
+
+/**********************************CONTACT**********************************/
+
+
+#contact{display: flex; flex-flow: column wrap;}
+#contact h4{font: 20px "police1", sans-serif; padding-bottom : 20px;}
+#contact>div{display: flex; flex-flow: row wrap; justify-content: center; width:100%; padding: 0 15%;}
+
+#contact>div>div:first-child{display: flex;flex-flow: column wrap; background-color: white; width: 50%;height: 350px;justify-content: flex-start; align-items: flex-start; border-radius: 25px; padding:1%; margin : 0 1%;}
+
+#contact>div>div:nth-child(2){display: flex;flex-flow: column wrap; background-color: white; width: 45%;height: 350px;justify-content: flex-start; align-items: flex-start; border-radius: 25px; padding:1%; margin : 0 1%;}
+
+#contact form{display: flex; flex-flow: row wrap;width: 100%; height: 280px; justify-content: space-between;}
+#contact input{height: 30px; width: 48%; background-color:  beige;}
+#contact textarea{width:100%; height:100px;background-color: beige;}
+#contact button{background-color: beige; border-radius:10px; padding: 10px 25px; background-color:cadetblue; font:16px "police1", sans-serif;}
+#contact button:hover{color:white;}
+
+
+#contact ul{height: 200px;display: flex; flex-flow: column wrap; justify-content: space-around; align-items: flex-start;padding: 0 5%; list-style-type: none;}
+
+#contact li{position: relative;}
+
+#contact li.pin_icon{list-style-image: url("Images/pin.svg"); }
+#contact li.phone_icon::before{content: url("Images/phone.png"); position : absolute; left:-20px;top:-10px;transform: rotate(220deg); }
+/*#contact li.mail_icon::before{content:url("Images/mail.svg"); position:absolute; left:-25px; top:-5px;}*/
+#contact li.linkedin_icon::before{content:url("Images/linkedin.png"); position:absolute;left:-25px;}
+#contact li.web_icon::before{content: url("Images/web.svg"); position: absolute; left:-25px;}
+li.web_icon a{text-decoration: none; font-weight:bold;color: cadetblue;}
+li.linkedin_icon a{text-decoration: none; font-weight:bold;color: cadetblue;}
+
+
+
+/***************************FOOTER*******************************/
+
+footer{display: flex; flex-flow: row wrap; justify-content: space-around;}
+footer p{color:grey;}
+footer a {color:grey; text-decoration: none;}
+
+
+
+
+/****************************RESPONSIVE***************************************/
+
+
+@media (max-width:1200px){
+    #about>div {width:80%; margin : 0 10%;}
+    
+    .portfolio_box{padding:0.5% 0.5%;}    
+}
+
+@media (max-width : 1024px){
+    #portfolio>div{flex-flow: column wrap;}
+    
+    .portfolio_box{padding: 2% 2%;}
+}
+
+@media (max-width : 900px){
+    
+}
+
+@media (max-width : 600px){
+    
+}
+
+@media (max-width : 480px){
+    
+}
+
+@media (max-width : 320px){
+    
+}
+
