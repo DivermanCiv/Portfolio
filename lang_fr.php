@@ -3,7 +3,7 @@
 define("_BONJOUR","Bonjour, je suis");
 define("_ADAM_DUPUIS","Adam Dupuis");
 define ("_DEVELOPPEUR","Développeur");
-define ("_SUR_RENNES","sur Rennes");
+define ("_AT_LOCATION","à Angers");
 define ("_SAVOIR_PLUS", "Voulez-vous en savoir plus ?");
 
 #Banner

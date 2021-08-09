@@ -112,7 +112,7 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 /****************************REFERENCES************************************/
 
 
-#references>div:nth-child(2){display: flex; flex-flow: column nowrap; justify-content: space-around; align-items: center; width:80%; margin:1% 10%; padding : 2% 0%; height:200px;background-color: white; border-radius: 100px;}
+#references>div:nth-child(2){position: relative; display: flex; flex-flow: column nowrap; justify-content: space-around; align-items: center; width:80%; margin:1% 10%; padding : 2% 0%; height:200px;background-color: white; border-radius: 100px;}
 
 #references>div>div:first-child{display: flex; flex-flow:column wrap; justify-content: space-around; height: 100%;width: 50%;}
 
@@ -120,7 +120,7 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 
 #references>div>div>p:first-child{font: 20px Arial, sans-serif; text-align: center;}
 
-#references>div>div>p:nth-child(2){text-align: end; font:italic 16px "police1", sans-serif;}
+#references>div>div>p:nth-child(2){position:relative; text-align: end; font:italic 16px "police1", sans-serif; left: 5%; top: 200%;}
 #references span{font: 14px "police1", sans-serif;}
 
 #references a{text-decoration: none; color:cadetblue;}
@@ -128,14 +128,18 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 
 /*Boutons pour passer d'une référence à une autre */
 
-.blue {width : 20px; height: 20px; background-color: cadetblue;border-radius: 50px; border-color:black; margin : 5px; }
+#previous_next_testimonial {position: absolute; width: 100%;}
 
-.white {width : 20px; height: 20px; background-color: white;border-radius: 50px; border-color:black; margin : 5px; }
+#previous_testimonial {height : 3%; width: 3%; margin-left: 2%;}
+
+#next_testimonial {height : 3%; width: 3%; transform: scaleX(-1); float:
+  right; margin-right: 2%; }
 
 
 /*Ajout de références*/
 #travailler_ensemble {margin: 0 10%; font-weight: bold;}
 .afficher_masquer {height : 30px; width : 80%;margin : 0 10%;}
+.afficher_masquer:hover{cursor: pointer;}
 #flip{ visibility: visible;display: flex; flex-flow: column wrap; justify-content: space-around; align-items: center; width:80%; margin:1% 10%; padding : 2% 2%; height:100%;background-color: white;border-radius: 25px;}
 #flop{visibility: hidden; height :0px;}
 
@@ -163,7 +167,7 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 
 #contact form{display: flex; flex-flow: row wrap;width: 100%; height: 280px; justify-content: space-between;}
 #contact input{height: 30px; width: 48%; background-color:  beige;}
-#contact textarea{width:100%; height:100px;background-color: beige;}
+#contact textarea{width:100%; height:100px;background-color: beige;padding-left: 5px;}
 #contact button{background-color: beige; border-radius:10px; padding: 10px 25px; background-color:cadetblue; font:16px "police1", sans-serif;}
 #contact button:hover{color:white;}
 
@@ -196,29 +200,28 @@ footer a {color:grey; text-decoration: none;}
 
 @media (max-width:1200px){
     #about>div {width:80%; margin : 0 10%;}
-    
-    .portfolio_box{padding:0.5% 0.5%;}    
+
+    .portfolio_box{padding:0.5% 0.5%;}
 }
 
 @media (max-width : 1024px){
     #portfolio>div{flex-flow: column wrap;}
-    
+
     .portfolio_box{padding: 2% 2%;}
 }
 
 @media (max-width : 900px){
-    
+
 }
 
 @media (max-width : 600px){
-    
+
 }
 
 @media (max-width : 480px){
-    
+
 }
 
 @media (max-width : 320px){
-    
-}
 
+}

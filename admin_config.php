@@ -4,7 +4,7 @@ $dsn = "mysql:host=localhost;dbname=portfolio";
 $username = "root";
 $password = "root";
 
-  try{
+try{
     $bdd= new PDO($dsn,$username,$password);
 }
 
@@ -12,25 +12,25 @@ catch (Exception $e)
 {
     die('Erreur : '.$e->getMessage());
 }
-#### Fonction pour vérifier qu'un user existe. Assigne à $id le numéro d'id de l'user s'il est trouvé.
+$user = $bdd -> prepare ('SELECT * FROM user');
+$user -> execute(array());
 
-########" REFAIRE LA FONCTION POUR NE PLUS UTILISER DE VARIABLES GLOBALES !!!!
 
-
-function user_exists($user){
-    $ok = FALSE;
-    global $mail, $id;
-    while ($data_user = $user -> fetch()){
-        if ($mail == $data_user["user_mail"]){
-            $id = $data_user ["ID_user"];
-            $ok= TRUE;
+function add_to_user($name, $mail, $phone, $orga, $position, $website, $ip, $user, $bdd){
+            $insert_into_user = $bdd-> prepare('INSERT INTO user (user_username, user_mail, user_phone, user_organisation, user_position, user_website, user_IP) VALUES (:nom, :mail, :telephone, :organisation, :position, :website, :ip)');
+            $insert_into_user -> execute(array(
+               'nom' => $name,
+                'mail'=> $mail,
+                'telephone'=> $phone,
+                'organisation'=> $orga,
+                'position' => $position,
+                'website' => $website,
+                'ip' => $ip
+            ));
         }
-    }
-    if ($ok){return TRUE;}
-    else {return FALSE;}
-}
 
-function fetch_in_user($a, $b){
+
+function fetch_in_user($a, $b, $user){
     while ($data_user = $user -> fetch()){
         if ($id == $data_user["ID_user"]){
             $a = $data_user[$b];

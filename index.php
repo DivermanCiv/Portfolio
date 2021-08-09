@@ -22,22 +22,22 @@ include("lang_config.php");
                 <div id="languages"> <!--1st line-->
                     <a href="index.php?lang=fr"><img class='french flag' src="Images/french.png" alt="french flag" title="french"/></a>
                     <a href="index.php?lang=en"><img class="english flag" src="Images/english.png" alt="union jack" title="english"/></a>
-                    
+
                 </div>
                 <div id="welcome">
                     <div>
                         <p id="bonjour"><?= _BONJOUR;?> </p>
                         <p><?= _ADAM_DUPUIS ;?></p>
                         <h1><?= _DEVELOPPEUR ;?></h1>
-                        <p><?= _SUR_RENNES ;?></p>
-                        
+                        <p><?= _AT_LOCATION ;?></p>
+
                     </div>
                     <div>
                         <p><?= _SAVOIR_PLUS ;?></p>
                         <a href="#navigateur"><img src="Images/whitearrow.svg" alt="arrow" title="arrow"/></a>
                     </div>
                 </div>
-                
+
             </div>
             <nav id="navigateur">
                 <a href=#banner><?= _ACCUEIL ;?></a>
@@ -46,11 +46,11 @@ include("lang_config.php");
                 <a href="#references"><?= _REFERENCES ;?></a>
                 <a href="#contact"><?= _ME_CONTACTER ;?></a>
             </nav>
-            
+
         </header>
-        
+
 <!--        -------------------ABOUT ME----------------------------------->
-        
+
         <section id="about">
             <h3><?= _QUI_SUIS_JE ;?></h3>
             <div>
@@ -68,20 +68,22 @@ include("lang_config.php");
             <h3><?= _PORTFOLIO ; ?></h3>
             <div>
                 <?php include ("project_portfolio.php"); ?>
-                
+
             </div>
         </section>
-        
-<!--        ------------------------------REFERENCES--------------------------------->
+
+<!--        REFERENCES -->
         <section id="references">
             <h3><?= _REFERENCES ; ?></h3>
             <div>
                 <?php
                 include("testimonial_portfolio.php");
-                while ($datatestimonial = $reqtestimonial ->  fetch())
-                {
+                $datatestimonial = $datatestimonial[2]
                 ?>
-                
+                <span id="previous_next_testimonial">
+                  <img id="previous_testimonial" src="Images/double_arrow.svg" alt="previous_testimonial">
+                  <img id="next_testimonial" src="Images/double_arrow.svg" alt="next_testimonial">
+                </span>
                 <div>
                     <?php
                         if ($_SESSION['lang'] == "fr"){
@@ -101,10 +103,9 @@ include("lang_config.php");
                             }
                         }
                     ?>
-                    
                     <p><?= _REFCONTENT ; ?></p>
-                    <p><?= $datatestimonial['user_username'].", "; ?> 
-                    <span><?= $datatestimonial["user_position"]." " . _A ; ?> 
+                    <p><?= $datatestimonial['user_username'].", "; ?>
+                    <span><?= $datatestimonial["user_position"]." " . _A ; ?>
                     <?php
                     if ($datatestimonial['user_website']!=NULL){
                         echo "<a href= ' ".$datatestimonial['user_website']." ' >".$datatestimonial['user_organisation'] ."</a>" ;
@@ -112,17 +113,9 @@ include("lang_config.php");
                     else {
                         echo $datatestimonial['user_organisation'] ;
                     }
-                }
                         ?>
                     </span>
                     </p>
-                </div>
-                <div>
-                    <form action="<?= _FORMPORTFOLIOREFERENCE ?>" method="post">
-                        <button name ="testimonialreference" type ="submit" class="<?= $buttoncolor1 ?>" value="reference1"></button>
-                        <button name ="testimonialreference" type ="submit" class="<?= $buttoncolor2 ?>" value="reference2"></button>
-                        <button name ="testimonialreference" type ="submit" class="<?= $buttoncolor3 ?>" value="reference3"></button>
-                    </form>
                 </div>
             </div>
             <p id ="travailler_ensemble"><?= _TRAVAILLER_ENSEMBLE ; ?></p>
@@ -139,12 +132,12 @@ include("lang_config.php");
                 </form>
             </div>
             <?php if (!empty($_POST["testimonial"])){
-                        echo "<p id='thank_you_testimonial'>". _THANKS_TESTIMONIAL . "</p>"; 
+                        echo "<p id='thank_you_testimonial'>". _THANKS_TESTIMONIAL . "</p>";
                     }
                     ?>
         </section>
-        
-<!--        --------------------------CONTACT------------------------------------->
+
+<!--  CONTACT -->
         <section id="contact">
             <h3><?= _ME_CONTACTER; ?></h3>
             <div>
@@ -164,7 +157,7 @@ include("lang_config.php");
                 <div>
                     <h4><?= _CONTACT_DIRECT ; ?></h4>
                     <ul>
-                        <li class="pin_icon">Rennes (35000)</li>
+                        <li class="pin_icon">Angers (49100)</li>
                         <li class="phone_icon">+33 6 11 20 74 68</li>
 <!--                        <li class="mail_icon">adamdupuis@laposte.net</li>-->
                         <li class= "linkedin_icon"><a href="https://www.linkedin.com/in/adam-dupuis/" target="_blank" >Linkedin</a></li>
@@ -173,17 +166,17 @@ include("lang_config.php");
                 </div>
             </div>
         </section>
-        
+
 <!--        -------------------------------FOOTER---------------------------------->
         <footer>
             <p>&copy; Adam DUPUIS - 2019</p>
             <a href="mentionslegales.html"><?= _MENTIONSLEGALES ; ?></a>
         </footer>
-        
+
 <!--        ON FERME ICI TOUT LES CURSEURS POUR STOPPER LES TRAITEMENTS DE REQUETES UTILISES -->
         <?php
-        $reqtestimonial -> closeCursor(); #Stoppe le traitement de la requête 
-        
+        $reqtestimonial -> closeCursor(); #Stoppe le traitement de la requête
+
         ?>
         <script>
             //Fonction Javascript pour coller la barre de navigation au haut de la page
@@ -208,13 +201,10 @@ include("lang_config.php");
                     addr.id = "flip";
                 }
             }
-            
+
             window.onload = function(){
                 addr = document.getElementById("flop");
             }
-            
+
         </script>
     </body>
-        
-        
-

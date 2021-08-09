@@ -3,7 +3,7 @@
 define("_BONJOUR","Hello, I am");
 define("_ADAM_DUPUIS","Adam Dupuis");
 define ("_DEVELOPPEUR","Developper");
-define ("_SUR_RENNES","living in Rennes");
+define ("_AT_LOCATION","in Angers");
 define ("_SAVOIR_PLUS", "Do you want to know more?");
 
 #Banner
@@ -53,8 +53,7 @@ define("_ENVOYER", "Submit");
 define ("_WEB_SITE", "You already are on my site! But you can go back to the <a href=\"#banner\">home page</a>");
 
 define ("_MENTIONSLEGALES", "Legal Notice");
-    
+
 
 
 ?>
-
