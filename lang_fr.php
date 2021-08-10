@@ -16,11 +16,11 @@ define("_ME_CONTACTER", "Me contacter");
 #About
 define("_QUI_SUIS_JE", "Qui suis-je ?");
 
-define("_3_MOTS_DEF", "Lorem, Ipsum, Metuebat");
+define("_3_MOTS_DEF", "Dynamique & Curieux");
 
-define("_DESCRIPTION", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem. Quisque tincidunt magna id fringilla accumsan. In dignissim a ipsum nec placerat. Nam commodo dui rutrum, convallis risus nec, mattis velit. Phasellus nec mattis libero, in dignissim nibh.");
+define("_DESCRIPTION", "Développeur web en formation (3e année) et geek presque assumé, je nourris de nombreux intérêts allant du jeu vidéo aux questions environnementales.<br><br>Toujours intéressé par des projets originaux et innovants, n'hésitez pas à me contacter pour discuter ! ");
 
-define ("_OBTENIR_CV", "<a href='CV_Adam_Dupuis.pdf' target='_blank'>Obtenez mon CV (50 KO)</a>");
+define ("_OBTENIR_CV", "<a href='CV_Adam_Dupuis.pdf' target='_blank'>Obtenez mon CV (727 KO)</a>");
 
 #Références
 

@@ -112,28 +112,18 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 /****************************REFERENCES************************************/
 
 
-#references>div:nth-child(2){position: relative; display: flex; flex-flow: column nowrap; justify-content: space-around; align-items: center; width:80%; margin:1% 10%; padding : 2% 0%; height:200px;background-color: white; border-radius: 100px;}
+#references>div:nth-child(2){position: relative; display: flex; flex-flow: column nowrap; justify-content: space-around; align-items: center; width:80%; margin:1% 10%; padding : 2% 0%; height:auto;background-color: white; border-radius: 100px;}
 
-#references>div>div:first-child{display: flex; flex-flow:column wrap; justify-content: space-around; height: 100%;width: 50%;}
+#references>div>div{display: flex; flex-flow:column wrap; justify-content: space-around; height: 100%;width: 75%; margin : 2% 0% 2% 0%}
 
-#references>div>div:nth-child(2){display:flex;flex-flow: row wrap; justify-content: center;align-content: flex-end; margin-top:20px;}
+/* #references>div>div:nth-child(2){display:flex;flex-flow: row wrap; justify-content: center;align-content: flex-end; margin-top:20px;} */
 
 #references>div>div>p:first-child{font: 20px Arial, sans-serif; text-align: center;}
 
-#references>div>div>p:nth-child(2){position:relative; text-align: end; font:italic 16px "police1", sans-serif; left: 5%; top: 200%;}
+#references>div>div>p:nth-child(2){text-align: end; font:italic 16px "police1", sans-serif; }
 #references span{font: 14px "police1", sans-serif;}
 
 #references a{text-decoration: none; color:cadetblue;}
-
-
-/*Boutons pour passer d'une référence à une autre */
-
-#previous_next_testimonial {position: absolute; width: 100%;}
-
-#previous_testimonial {height : 3%; width: 3%; margin-left: 2%;}
-
-#next_testimonial {height : 3%; width: 3%; transform: scaleX(-1); float:
-  right; margin-right: 2%; }
 
 
 /*Ajout de références*/

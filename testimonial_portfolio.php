@@ -1,9 +1,6 @@
 <?php
 
 
-
-#GESTION DES REFERENCES A AJOUTER
-
 #Gestion des références à afficher
 
 
@@ -13,6 +10,8 @@ $reqtestimonial = $bdd -> prepare ('SELECT * FROM testimonial, user WHERE user.I
 $reqtestimonial -> execute();
 
 $datatestimonial = $reqtestimonial ->  fetchAll();
+
+
 
 #Ajout de références par les users
 

@@ -16,11 +16,11 @@ define("_ME_CONTACTER", "Contact Me");
 #About
 define("_QUI_SUIS_JE", "Who am I?");
 
-define("_3_MOTS_DEF", "Lorem, Curious, Ipsum");
+define("_3_MOTS_DEF", "Dynamic & Curious");
 
-define("_DESCRIPTION", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit leo nisi. Nullam eget interdum massa, et auctor diam. Suspendisse quis nisl sit amet enim ultricies ultrices viverra sit amet lorem. Quisque tincidunt magna id fringilla accumsan. In dignissim a ipsum nec placerat. Nam commodo dui rutrum, convallis risus nec, mattis velit. Phasellus nec mattis libero, in dignissim nibh.");
+define("_DESCRIPTION", "Web developper in formation (3rd year) and almost comfortable with my nerdiness, I have numerous interests from video games to environmental questions.<br><br>Always interested by original and innovative projects, don't hesitate to get in touch with me to chat !");
 
-define ("_OBTENIR_CV", "<a href='Resume_Adam_Dupuis.pdf' target='_blank'>Get my resume (50 KB)</a>");
+define ("_OBTENIR_CV", "<a href='Resume_Adam_Dupuis.pdf' target='_blank'>Get my resume (727 KB)</a>");
 
 #Références
 define("_A","at");

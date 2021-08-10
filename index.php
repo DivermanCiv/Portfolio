@@ -16,7 +16,7 @@ include("lang_config.php");
         <link rel='stylesheet' href='styles.css'/>
     </head>
     <body>
-<!-----------------------------HEADER-------------------------------------------------    -->
+<!-- HEADER -->
         <header>
             <div id="banner">  <!--banner-->
                 <div id="languages"> <!--1st line-->
@@ -49,7 +49,7 @@ include("lang_config.php");
 
         </header>
 
-<!--        -------------------ABOUT ME----------------------------------->
+<!-- ABOUT ME -->
 
         <section id="about">
             <h3><?= _QUI_SUIS_JE ;?></h3>
@@ -63,7 +63,7 @@ include("lang_config.php");
                 </div>
             </div>
         </section>
-<!--        -------------------------------PORTFOLIO-------------------------->
+<!-- PORTFOLIO -->
         <section id="portfolio">
             <h3><?= _PORTFOLIO ; ?></h3>
             <div>
@@ -78,45 +78,39 @@ include("lang_config.php");
             <div>
                 <?php
                 include("testimonial_portfolio.php");
-                $datatestimonial = $datatestimonial[2]
+                for ($testimonial_id=0; $testimonial_id < count($datatestimonial); $testimonial_id++) {
+                  $data = $datatestimonial[$testimonial_id]
                 ?>
-                <span id="previous_next_testimonial">
-                  <img id="previous_testimonial" src="Images/double_arrow.svg" alt="previous_testimonial">
-                  <img id="next_testimonial" src="Images/double_arrow.svg" alt="next_testimonial">
-                </span>
                 <div>
                     <?php
-                        if ($_SESSION['lang'] == "fr"){
-                            if (empty($datatestimonial['testimonial_content_fr'])){
-                                define ("_REFCONTENT", "Oups, cette référence n'a pas encore été traduite en français !");
+                        if ($_SESSION['lang'] == "fr" && !empty($data['testimonial_content_fr'])){
+                            $testimonial_content = $data['testimonial_content_fr'];
                             }
-                            else {
-                                define ("_REFCONTENT", $datatestimonial['testimonial_content_fr']);
-                            }
+                        elseif ($_SESSION['lang'] == "en" && !empty($data['testimonial_content_en'])) {
+                            $testimonial_content = $data['testimonial_content_en'];
                         }
-                        elseif ($_SESSION['lang'] == "en"){
-                            if (empty($datatestimonial['testimonial_content_en'])){
-                                define ("_REFCONTENT", "Oops, this testimonial hasn't been translated in english yet!");
-                            }
-                            else{
-                                define ("_REFCONTENT", $datatestimonial['testimonial_content_en']);
-                            }
+                        elseif (!empty($data['testimonial_content_fr'])){
+                            $testimonial_content = $data['testimonial_content_fr'];
+                        }
+                        elseif (!empty($data['testimonial_content_en'])){
+                          $testimonial_content = $data['testimonial_content_en'];
                         }
                     ?>
-                    <p><?= _REFCONTENT ; ?></p>
-                    <p><?= $datatestimonial['user_username'].", "; ?>
-                    <span><?= $datatestimonial["user_position"]." " . _A ; ?>
-                    <?php
-                    if ($datatestimonial['user_website']!=NULL){
-                        echo "<a href= ' ".$datatestimonial['user_website']." ' >".$datatestimonial['user_organisation'] ."</a>" ;
-                    }
-                    else {
-                        echo $datatestimonial['user_organisation'] ;
-                    }
-                        ?>
-                    </span>
+                    <p><?= $testimonial_content ; ?></p>
+                    <p><?= $data['user_username'].", "; ?>
+                      <span><?= $data["user_position"]." " . _A ; ?>
+                      <?php
+                      if ($data['user_website']!=NULL){
+                          echo "<a href= ' ".$data['user_website']." ' >".$data['user_organisation'] ."</a>" ;
+                      }
+                      else {
+                          echo $data['user_organisation'] ;
+                      }
+                          ?>
+                      </span>
                     </p>
                 </div>
+              <?php } ?>
             </div>
             <p id ="travailler_ensemble"><?= _TRAVAILLER_ENSEMBLE ; ?></p>
             <a class="afficher_masquer" onclick ="ShowHide();"><?= _AFFICHER_MASQUER ; ?></a>
@@ -167,7 +161,7 @@ include("lang_config.php");
             </div>
         </section>
 
-<!--        -------------------------------FOOTER---------------------------------->
+<!-- FOOTER -->
         <footer>
             <p>&copy; Adam DUPUIS - 2019</p>
             <a href="mentionslegales.html"><?= _MENTIONSLEGALES ; ?></a>
