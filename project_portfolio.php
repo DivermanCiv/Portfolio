@@ -1,6 +1,6 @@
 <?php
 
-$reqproject = $bdd -> prepare ('SELECT * FROM project');
+$reqproject = $bdd -> prepare ('SELECT * FROM project ORDER BY ID_project DESC');
 
 $reqproject -> execute(array());
 

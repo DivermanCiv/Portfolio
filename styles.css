@@ -93,7 +93,7 @@ h3 { justify-content: space-around; align-items: center;width:100%;padding:100px
 #portfolio{position: relative; z-index: 0; }
 #portfolio img{height:300px; width:400px;position: absolute; z-index: 2;border-radius: 15px;}
 
-#portfolio>div{display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center;width:80%; margin:0 10%;}
+#portfolio>div{display: flex; flex-flow: row wrap; justify-content: space-around; align-items: center;width:80%; margin:0 10%;}
 
 #portfolio p:first-child{ color:white;z-index:1;position: relative; font: 16px "police1", sans-serif; justify-content: space-around; align-items: center; height:280px; text-align: center; padding:100px 20px;}
 
