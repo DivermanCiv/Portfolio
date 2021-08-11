@@ -1,8 +1,10 @@
 <?php
 
-$dsn = "mysql:host=localhost;dbname=portfolio";
-$username = "root";
-$password = "root";
+include("env.php");
+
+$dsn = getenv('DSN');
+$username = getenv('DB_USERNAME');
+$password = getenv('DB_PW');
 
 try{
     $bdd= new PDO($dsn,$username,$password);
