@@ -1,6 +1,8 @@
 <?php
 
-include("env.php");
+if (file_exists("env.php")){
+  include("env.php");
+}
 
 $dsn = getenv('DSN');
 $username = getenv('DB_USERNAME');
