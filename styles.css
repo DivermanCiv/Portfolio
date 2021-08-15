@@ -52,14 +52,15 @@ h1{color:white;font: 40px 'police1', sans-serif;}
 
 
 #welcome img{height:30px; width: 60px;margin-top:10px;}
+#know_more:hover{cursor: pointer;}
 
 /*navigateur*/
 
 nav{position: relative; overflow: hidden; background-color: white; display: flex; flex-flow: row nowrap; justify-content: space-around; align-items: center; width: 100%; height: 50px; padding:0 15%; border-bottom: 6px; border-bottom-style: groove; z-index: 10;}
 
-nav a{text-decoration: none; color:black; font: 16px 'police1', sans-serif; text-transform: uppercase; padding: 5% 5%; width:100%; text-align: center;}
+nav p{text-decoration: none; color:black; font: 16px 'police1', sans-serif; text-transform: uppercase; padding: 5% 5%; width:100%; text-align: center;}
 
-nav a:hover{background-color:cadetblue; color:white;}
+nav p:hover{background-color:cadetblue; color:white; cursor:pointer;}
 
 .sticky {
   position: fixed;

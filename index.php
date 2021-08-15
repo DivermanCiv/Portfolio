@@ -34,17 +34,17 @@ include("lang_config.php");
                     </div>
                     <div>
                         <p><?= _SAVOIR_PLUS ;?></p>
-                        <a href="#navigateur"><img src="Images/whitearrow.svg" alt="arrow" title="arrow"/></a>
+                        <img id="know_more" src="Images/whitearrow.svg" alt="arrow" title="arrow"/>
                     </div>
                 </div>
 
             </div>
             <nav id="navigateur">
-                <a href=#banner><?= _ACCUEIL ;?></a>
-                <a href=#about><?= _A_PROPOS ;?></a>
-                <a href="#portfolio"><?= _PORTFOLIO ;?></a>
-                <a href="#references"><?= _REFERENCES ;?></a>
-                <a href="#contact"><?= _ME_CONTACTER ;?></a>
+                <p id="_banner"><?= _ACCUEIL ;?></p>
+                <p id="_about"><?= _A_PROPOS ;?></p>
+                <p id="_portfolio"><?= _PORTFOLIO ;?></p>
+                <p id="_references"><?= _REFERENCES ;?></p>
+                <p id="_contact"><?= _ME_CONTACTER ;?></p>
             </nav>
 
         </header>
@@ -184,8 +184,8 @@ include("lang_config.php");
                     navbar.classList.add("sticky")
                 } else {
                     navbar.classList.remove("sticky");
-  }
-}
+                  }
+            }
             //Fonction pour afficher/cacher des balises lorsque l'on clique sur un bouton
             function ShowHide(){
                 if (addr.id == "flip") {
@@ -198,6 +198,33 @@ include("lang_config.php");
 
             window.onload = function(){
                 addr = document.getElementById("flop");
+            }
+
+            //Fonction pour une transition douce quand la flèche de "en savoir plus est cliquée" et pour les éléments de la barre de navigation
+
+
+            function smoothTransition(button, target){
+              button.addEventListener('click', function(){
+                target.scrollIntoView({
+                  block: 'start',
+                  behavior: 'smooth',
+                  inline: 'nearest'
+                });
+              });
+            }
+
+            window.onload = function(){
+              smoothTransition(document.getElementById('know_more'), document.getElementById('navigateur'));
+
+              smoothTransition(document.getElementById('_banner'),document.getElementById('banner'));
+
+              smoothTransition(document.getElementById('_about'),document.getElementById('about'));
+
+              smoothTransition(document.getElementById('_portfolio'),document.getElementById('portfolio'));
+
+              smoothTransition(document.getElementById('_references'),document.getElementById('references'));
+
+              smoothTransition(document.getElementById('_contact'),document.getElementById('contact'));
             }
 
         </script>
